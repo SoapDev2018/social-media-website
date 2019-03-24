@@ -10,6 +10,7 @@
 
 body {
   line-height: 17px;
+  background-color: #e6eae8;
 }
 
 .top_bar {
@@ -20,6 +21,8 @@ body {
   border-bottom: 0.25em solid #7158e2;
   margin: 0 0 10px;
   display: inline-flex;
+  position: fixed;
+  z-index: 10;
 }
 
 .logo a {
@@ -53,4 +56,46 @@ nav a:hover {
   text-decoration: none;
   border-bottom: 7px solid #3867d6;
   color: #fff;
+}
+
+.wrapper {
+  margin: 0 auto;
+  top: 50px;
+  position: relative;
+  padding: 0 10px;
+  width: 75%;
+  min-width: 950px;
+}
+
+.wrapper a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.column {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #d3d3d3;
+  border-radius: 7px;
+  box-shadow: 2px 2px 1px #d3d3d3;
+  z-index: -1;
+}
+
+.user_details {
+  width: 250px;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.user_details_left_right {
+  width: 125px;
+  display: inline-block;
+  position: absolute;
+}
+
+.user_details img {
+  height: 125px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-left: -1px;
 }
