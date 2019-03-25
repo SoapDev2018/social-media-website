@@ -30,6 +30,11 @@
         <input type="submit" name="post" id="post" value="Post">
         <hr>
       </form>
+
+      <?php
+        $post = new Post($con, $userLoggedIn);
+        $post->loadPostsFriends();
+      ?>
     </div>
   </div>
 </body>
