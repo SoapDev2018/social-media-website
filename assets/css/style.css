@@ -82,7 +82,7 @@ nav a:hover {
 }
 
 .user_details {
-  width: 250px;
+  width: 265px;
   float: left;
   margin-bottom: 20px;
 }
@@ -98,4 +98,48 @@ nav a:hover {
   border-radius: 5px;
   margin-right: 5px;
   margin-left: -1px;
+}
+
+.main_column {
+  float: right;
+  width: 70%;
+  z-index: -1;
+  min-height: 60px;
+}
+
+.post_form {
+  width: 100%;
+}
+
+.post_form textarea {
+  width: 81%;
+  height: 60px;
+  border-radius: 5px;
+  margin-right: 5px;
+  border: 1px solid #d3d3d3;
+  font-size: 12px;
+  padding: 5px;
+}
+
+textarea:focus {
+  outline: 0;
+}
+
+.post_form input[type="submit"] {
+  width: 11%;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  background-color: #7d5fff;
+  font-family: 'Bellota-BoldItalic',sans-serif;
+  color: #2d45b7;
+  text-shadow: #030b30 0.5px 0.5px 0px;
+  font-size: 90%;
+  position: absolute;
+  outline: 0;
+  margin: 0;
+}
+
+.post_form input[type="submit"]:active {
+  padding: 5px 4px 4px 5px;
 }

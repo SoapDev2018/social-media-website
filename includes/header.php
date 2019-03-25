@@ -29,7 +29,7 @@
     </div>
 
     <nav>
-      <a href="#">
+      <a href="<?php echo $userLoggedIn ?>">
         <?php echo $user['first_name']; ?>
       </a>
       <a href="#"><i class="fal fa-envelope fa-lg"></i></a>
