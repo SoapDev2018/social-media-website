@@ -143,3 +143,19 @@ textarea:focus {
 .post_form input[type="submit"]:active {
   padding: 5px 4px 4px 5px;
 }
+
+.status_post {
+  width: 96%;
+  font-size: 15px;
+  padding: 0px 50x;
+  min-height: 75px;
+}
+
+.post_profile_pic {
+  float: left;
+  margin-right: 7px;
+}
+
+.post_profile_pic img {
+  border-radius: 5px; /*Set to 25px to make rounded profile pic
+}

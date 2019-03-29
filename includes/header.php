@@ -32,8 +32,8 @@
       <a href="<?php echo $userLoggedIn ?>">
         <?php echo $user['first_name']; ?>
       </a>
-      <a href="#"><i class="fal fa-envelope fa-lg"></i></a>
       <a href="#"><i class="fal fa-home fa-lg"></i></a>
+      <a href="#"><i class="fal fa-envelope fa-lg"></i></a>
       <a href="#"><i class="fal fa-bell fa-lg"></i></a>
       <a href="#"><i class="fal fa-users fa-lg"></i></a>
       <a href="#"><i class="fal fa-cog fa-lg"></i></a>
