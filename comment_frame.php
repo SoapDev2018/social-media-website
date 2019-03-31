@@ -139,6 +139,9 @@
         <?php
       }
     }
+    else {
+      echo "<center><br><br>No Comments to Show!</center>";
+    }
   ?>
   
 </body>
