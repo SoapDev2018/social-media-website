@@ -13,6 +13,11 @@ body {
   background-color: #e6eae8;
 }
 
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
 .top_bar {
   width: 100%;
   min-width: 1050px;
@@ -149,6 +154,7 @@ textarea:focus {
   font-size: 15px;
   padding: 0px 50x;
   min-height: 75px;
+  cursor: pointer;
 }
 
 .post_profile_pic {
@@ -157,5 +163,42 @@ textarea:focus {
 }
 
 .post_profile_pic img {
-  border-radius: 5px; /*Set to 25px to make rounded profile pic*/
+  border-radius: 25px; /*Set to 5px to make squircle profile pic*/
+}
+
+#comment_iframe {
+  min-height: 250xp;
+  width: 100%;
+}
+
+.comment_section {
+  padding: 0px 5px 5px 5px;
+}
+
+.comment_section img {
+  margin: 0 3px 3px 3px;
+  border-radius: 25px;
+}
+
+#comment_form textarea {
+  border-color: #d3d3d3;
+  width: 85%;
+  height: 35px;
+  border-radius: 5px;
+  color: #616060;
+  font-size: 14px;
+  margin: 3px 3px 3px 5px;
+}
+
+#comment_form input[type="submit"] {
+  border: none;
+  color: #2d45b7;
+  background-color: #7d5fff;
+  border-radius: 5px;
+  width: 13%;
+  height: 35px;
+  margin-top: 3px;
+  position: absolute;
+  font-family: 'Bellota-BoldItalic',sans-serif;
+  text-shadow: #030b30 0.5px 0.5px 0px;
 }
