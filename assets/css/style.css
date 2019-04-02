@@ -250,7 +250,10 @@ textarea:focus {
 .profile_left img {
   min-width: 80px;
   width: 55%;
-  margin: 20px;
+  margin-left: 40px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border: 5px solid #4730af;
   border-radius: 100px;
 }
@@ -263,6 +266,37 @@ textarea:focus {
 
 .profile_info p {
   text-align: justify;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 50px;
   word-wrap: break-word;
+}
+
+/*.danger {
+  background-color: #e74c3c;
+}
+
+.warning {
+  background-color: #f0ad4e;
+}
+
+.default {
+  background-color: #bdc3c7;
+}
+
+.success {
+  background-color: #2ecc71;
+}
+
+.info {
+  background-color: #3498db;
+}
+
+.deep_blue {
+  background-color: #0043f0;
+}*/
+
+.profile_left input[type="submit"] {
+  margin-left: 10px;
+  width: 90%;
+  margin: 7px 0 0 7px;
+  border: none;
 }
