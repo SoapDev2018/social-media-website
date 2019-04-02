@@ -1,5 +1,7 @@
 <?php
   require 'config/config.php';
+  include("includes/classes/User.php");
+  include("includes/classes/Post.php");
   if(isset($_SESSION['username'])) {
     $userLoggedIn = $_SESSION['username'];
     $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
@@ -35,7 +37,7 @@
       <a href="index.php"><i class="fal fa-home fa-lg"></i></a>
       <a href="#"><i class="fal fa-envelope fa-lg"></i></a>
       <a href="#"><i class="fal fa-bell fa-lg"></i></a>
-      <a href="#"><i class="fal fa-users fa-lg"></i></a>
+      <a href="requests.php"><i class="fal fa-users fa-lg"></i></a>
       <a href="#"><i class="fal fa-cog fa-lg"></i></a>
       <a href="includes/handlers/logout.php"><i class="fal fa-sign-out-alt fa-lg"></i></a>
     </nav>
