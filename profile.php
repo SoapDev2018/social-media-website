@@ -50,8 +50,9 @@
             </form>
             <input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#post_form" value="Post Something">
         </div>
-        <div class="main_column column">
-            <?php echo $username; ?>
+        <div class="profile_main_column column">
+            <div class="posts_area"></div>
+            <img id="loading" src="assets/images/icons/loading.gif" alt="">
         </div>
         <div class="modal fade" id="post_form" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -79,6 +80,50 @@
                 </div>
             </div>
         </div>
+        <script>
+            var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+            var profileUsername = '<?php echo $username ?>';
+            $(document).ready(function() {
+                $('#loading').show();
+
+                //Original ajax request for loading first posts
+                $.ajax({
+                url: "includes/handlers/ajax_load_profile_posts.php",
+                type: "POST",
+                data: "page=1&userLoggedIn=" + userLoggedIn + "&profileUsername=" + profileUsername,
+                cache: false,
+
+                success: function(data) {
+                    $('#loading').hide();
+                    $('.posts_area').html(data);
+                }
+                });
+                $(window).scroll(function() {
+                var height = $('.posts_area').height();
+                var scroll_top = $(this).scrollTop();
+                var page = $('.posts_area').find('.nextPage');
+                var noMorePosts = $('.posts_area').find('.noMorePosts').val();
+
+                if((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
+                    $('#loading').show();
+                    var ajaxReq = $.ajax({
+                    url: "includes/handlers/ajax_load_profile_posts.php",
+                    type: "POST",
+                    data: "page=" + page + "&userLoggedIn=" + userLoggedIn + "&profileUsername=" + profileUsername,
+                    cache: false,
+
+                    success: function(respone) {
+                        $('.posts_area').find('.nextPage').remove();
+                        $('.posts_area').find('.noMorePosts').remove();
+                        $('#loading').hide();
+                        $('.posts_area').append(response);
+                    }
+                    });
+                }
+                return false;
+                });
+            });
+        </script>
 	</div>
 </body>
 </html>
