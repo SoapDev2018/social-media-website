@@ -64,7 +64,7 @@
                     </div>
                     <div class="modal-body">
                     <p>This will appear on the user's profile page and also their newsfeed for your friends to see!</p>
-      	            <form class="profile_post" action="" method="POST">
+      	            <form class="profile_post" method="POST">
                         <div class="form-group">
                             <textarea class="form-control" name="post_body"></textarea>
                             <input type="hidden" name="user_from" value="<?php echo $userLoggedIn; ?>">
