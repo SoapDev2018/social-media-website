@@ -16,12 +16,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css">
   <link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/olympia.js"></script>
+
   <title>Project Olympia | Social Media Website</title>
 </head>
 <body>
