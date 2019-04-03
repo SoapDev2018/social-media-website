@@ -19,6 +19,7 @@
 
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery.Jcrop.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css">
   <link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css">
 
@@ -26,6 +27,8 @@
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/bootbox.all.min.js"></script>
   <script src="assets/js/olympia.js"></script>
+  <script src="assets/js/jcrop_bits.js"></script>
+  <script src="assets/js/jquery.Jcrop.js"></script>
 
   <title>Project Olympia | Social Media Website</title>
 </head>
