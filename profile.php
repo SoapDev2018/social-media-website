@@ -49,6 +49,15 @@
                 ?>
             </form>
             <input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#post_form" value="Post Something">
+            <?php
+                if($userLoggedIn != $username) {
+                    echo '<div class="profile_info_bottom">';
+                    echo '<button type="button" class="btn btn-info">';
+                    echo $logged_in_user_obj->getMutualFriends($username) . " mutual friends";
+                    echo '</button>';
+                    echo '</div>';
+                }
+            ?>
         </div>
         <div class="profile_main_column column">
             <div class="posts_area"></div>

@@ -304,3 +304,8 @@ textarea:focus {
   width: 70%;
   z-index: -1;
 }
+
+.profile_info_bottom {
+  margin: 20px 0 0 20px;
+  pointer-events: none;
+}
