@@ -1,11 +1,9 @@
 <?php
-include("includes/header.php"); //Header 
+include("includes/header.php");
 ?>
 
 <div class="main_column column" id="main_column">
-
-	<h4>Friend Requests</h4>
-
+	<h4 style="text-align: center;">Friend Requests</h4>
 	<?php
     $query = mysqli_query($con, "SELECT * FROM friend_requests WHERE user_to='$userLoggedIn'");
     if(mysqli_num_rows($query) == 0)
