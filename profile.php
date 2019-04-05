@@ -1,5 +1,6 @@
 <?php 
     include("includes/header.php");
+    $message_obj = new Message($con, $userLoggedIn);
     if(isset($_GET['profile_username'])) {
         $username = $_GET['profile_username'];
         $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$username'");
@@ -17,6 +18,22 @@
     }
     if(isset($_POST['respond_request']))
         header("Location: requests.php");
+
+    if(isset($_POST['post_message'])) {
+        if(isset($_POST['message_body'])) {
+            $body = mysqli_real_escape_string($con, $_POST['message_body']);
+            $date = date("Y-m-d H:i:s");
+            $message_obj->sendMessage($username,$body,$date);
+        }
+        echo "<script>
+                $(function() {
+                    var x = document.getElementById('newsfeed_div');
+                    var y = document.getElementById('messages_div');
+                    x.style.display='none';
+                    y.style.display='block';
+                });
+                </script>";
+    }
 ?>
         <style>
             .wrapper {
@@ -60,8 +77,55 @@
             ?>
         </div>
         <div class="profile_main_column column">
-            <div class="posts_area"></div>
-            <img id="loading" src="assets/images/icons/loading.gif" alt="">
+            <ul class="nav nav-pills" role="tablist" id="profileTabs">
+                <li class="nav-item"><a class="nav-link active" onmousedown="fade_out_messages()" href="#newsfeed_div" aria-controls="newsfeed_div" role="tab" data-toggle="tab">Newsfeed</a></li>
+                <li class="nav-item"><a class="nav-link" onmousedown="fade_out_newsfeed()" href="#messages_div" aria-controls="messages_div" role="tab" data-toggle="tab">Messages</a></li>
+            </ul>
+
+            <script>
+                function fade_out_newsfeed() {
+                    var x = document.getElementById("newsfeed_div");
+                    var y = document.getElementById("messages_div");
+                    x.style.display="none";
+                    y.style.display="block";
+                }
+
+                function fade_out_messages() {
+                    var x = document.getElementById("messages_div");
+                    var y = document.getElementById("newsfeed_div");
+                    x.style.display="none";
+                    y.style.display="block";
+                }
+            </script>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="newsfeed_div">
+                    <div class="posts_area"></div>
+                    <img id="loading" src="assets/images/icons/loading.gif">
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane" id="messages_div">
+                    <?php
+                        echo "<h4>You and <a href='" . $username . "'>" . $profile_user_obj->getFirstAndLastName() . "</a></h4><hr><br>";
+                        echo "<div class='loaded_messages' id='scroll_messages'>";
+                            echo $message_obj->getMessages($username);
+                        echo "</div>";
+                    ?>
+                    <div class="message_post">
+                    <form action="" method="POST">
+                        <textarea name='message_body' id='message_textarea' placeholder='Write your message... '></textarea>
+                        <input type='submit' name='post_message' class='btn btn-primary' id='message_submit' value='Send'>
+                    </form>
+                    </div>
+                    <script>
+                        var div = document.getElementById("scroll_messages");
+                        div.scrollTop = div.scrollHeight;
+                    </script>
+                </div>
+            </div>
+
         </div>
         <div class="modal fade" id="post_form" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
