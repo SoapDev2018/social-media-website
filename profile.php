@@ -78,20 +78,20 @@
         </div>
         <div class="profile_main_column column">
             <ul class="nav nav-pills" role="tablist" id="profileTabs">
-                <li class="nav-item"><a class="nav-link active" onmousedown="fade_out_messages()" href="#newsfeed_div" aria-controls="newsfeed_div" role="tab" data-toggle="tab">Newsfeed</a></li>
-                <li class="nav-item"><a class="nav-link" onmousedown="fade_out_newsfeed()" href="#messages_div" aria-controls="messages_div" role="tab" data-toggle="tab">Messages</a></li>
+                <li class="nav-item"><a class="nav-link active" onmousedown="fade_out_about()" href="#newsfeed_div" aria-controls="newsfeed_div" role="tab" data-toggle="tab">Newsfeed</a></li>
+                <li class="nav-item"><a class="nav-link" onmousedown="fade_out_newsfeed()" href="#about_div" aria-controls="about_div" role="tab" data-toggle="tab">About</a></li>
             </ul>
 
             <script>
                 function fade_out_newsfeed() {
                     var x = document.getElementById("newsfeed_div");
-                    var y = document.getElementById("messages_div");
+                    var y = document.getElementById("about_div");
                     x.style.display="none";
                     y.style.display="block";
                 }
 
-                function fade_out_messages() {
-                    var x = document.getElementById("messages_div");
+                function fade_out_about() {
+                    var x = document.getElementById("about_div");
                     var y = document.getElementById("newsfeed_div");
                     x.style.display="none";
                     y.style.display="block";
@@ -106,23 +106,7 @@
             </div>
 
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane" id="messages_div">
-                    <?php
-                        echo "<h4>You and <a href='" . $username . "'>" . $profile_user_obj->getFirstAndLastName() . "</a></h4><hr><br>";
-                        echo "<div class='loaded_messages' id='scroll_messages'>";
-                            echo $message_obj->getMessages($username);
-                        echo "</div>";
-                    ?>
-                    <div class="message_post">
-                    <form action="" method="POST">
-                        <textarea name='message_body' id='message_textarea' placeholder='Write your message... '></textarea>
-                        <input type='submit' name='post_message' class='btn btn-primary' id='message_submit' value='Send'>
-                    </form>
-                    </div>
-                    <script>
-                        var div = document.getElementById("scroll_messages");
-                        div.scrollTop = div.scrollHeight;
-                    </script>
+                <div role="tabpanel" class="tab-pane" id="about_div">
                 </div>
             </div>
 
