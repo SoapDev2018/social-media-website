@@ -54,4 +54,38 @@
     <div class="dropdown_data_window" style="height: 0px; border: none;"></div>
     <input type="hidden" id="dropdown_data_type" value="">
   </div>
+  <script>
+    var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+    $(document).ready(function() {
+      $('.dropdown_data_window').scroll(function() {
+        var inner_height = $('.dropdown_data_window').innerHeight();
+        var scroll_top = $('.dropdown_data_window').scrollTop();
+        var page = $('.dropdown_data_window').find('.nextPageDropdownData');
+        var noMoreData = $('.dropdown_data_window').find('.noMoreDropdownData').val();
+
+        if((scroll_top + inner_height >= $('.dropdown_data_window')[0].scrollHeight) && noMoreData == 'false') {
+          var pageName; //Holds name of page to send ajax request to
+          var type = $('#dropdown_data_type').val();
+          if(type == 'notification')
+            pageName = "ajax_load_notifications.php";
+          else if(type == 'message')
+            pageName = "ajax_load_messages.php";
+
+          var ajaxReq = $.ajax({
+            url: "includes/handlers/" + pageName,
+            type: "POST",
+            data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
+            cache: false,
+
+            success: function(respone) {
+              $('.dropdown_data_window').find('.nextPageDropdownData').remove();
+              $('.dropdown_data_window').find('.noMoreDropdownData').remove();
+              $('.dropdown_data_window').append(response);
+            }
+          });
+        }
+        return false;
+      });
+    });
+  </script>
   <div class="wrapper">
