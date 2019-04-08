@@ -45,11 +45,13 @@
         <?php echo $user['first_name']; ?>
       </a>
       <a href="index.php"><i class="fal fa-home fa-lg"></i></a>
-      <a href="#"><i class="fal fa-envelope fa-lg"></i></a>
+      <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>','message')"><i class="fal fa-envelope fa-lg"></i></a>
       <a href="#"><i class="fal fa-bell fa-lg"></i></a>
       <a href="requests.php"><i class="fal fa-users fa-lg"></i></a>
       <a href="#"><i class="fal fa-cog fa-lg"></i></a>
       <a href="includes/handlers/logout.php"><i class="fal fa-sign-out-alt fa-lg"></i></a>
     </nav>
+    <div class="dropdown_data_window" style="height: 0px; border: none;"></div>
+    <input type="hidden" id="dropdown_data_type" value="">
   </div>
   <div class="wrapper">

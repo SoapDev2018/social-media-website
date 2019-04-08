@@ -353,7 +353,8 @@ textarea:focus {
   height: 65%;
   min-height: 300px;
   max-height: 400px;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   margin-bottom: 10px;
 }
 
@@ -409,4 +410,17 @@ textarea:focus {
 
 .tab-content {
   margin-top: 25px;
+}
+
+.dropdown_data_window {
+  background-color: #fff;
+  border: 1px solid #DADADA;
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+  width: 300px;
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
