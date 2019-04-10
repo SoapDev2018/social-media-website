@@ -41,11 +41,21 @@
     </div>
 
     <nav>
+      <?php
+        //Unread messages
+        $messages = new Message($con, $userLoggedIn);
+        $num_messages = $messages->getUnreadNumber();
+      ?>
       <a href="<?php echo $userLoggedIn ?>">
         <?php echo $user['first_name']; ?>
       </a>
       <a href="index.php"><i class="fal fa-home fa-lg"></i></a>
-      <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>','message')"><i class="fal fa-envelope fa-lg"></i></a>
+      <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>','message')"><i class="fal fa-envelope fa-lg"></i>
+        <?php
+          if($num_messages > 0)
+          echo '<span class="notification_badge" id="unread_message">' . $num_messages . '</span>';
+        ?>
+      </a>
       <a href="#"><i class="fal fa-bell fa-lg"></i></a>
       <a href="requests.php"><i class="fal fa-users fa-lg"></i></a>
       <a href="#"><i class="fal fa-cog fa-lg"></i></a>
