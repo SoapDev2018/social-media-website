@@ -9,6 +9,12 @@
       $this->user = mysqli_fetch_array($user_details_query);
     }
 
+    public function getNumberOfFriendRequests() {
+      $username = $this->user['username'];
+      $query = mysqli_query($this->con,"SELECT * FROM friend_requests WHERE user_to='$username'");
+      return mysqli_num_rows($query);
+    }
+
     public function getFirstAndLastName() {
       $username = $this->user['username'];
       $query = mysqli_query($this->con,"SELECT first_name, last_name FROM users WHERE username='$username'");
