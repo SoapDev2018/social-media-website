@@ -307,7 +307,7 @@ textarea:focus {
 
 .profile_info_bottom {
   margin: 20px 0 0 20px;
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 
 #message_textarea {
@@ -439,4 +439,22 @@ textarea:focus {
   position: absolute;
   left: 8px;
   top: -5px;
+}
+
+.resultDisplayNotification {
+  /*height: auto;*/
+  color: #1485BD;
+  padding-bottom: 4px;
+}
+
+.notificationsProfilePic img {
+  height: 40px;
+  border-radius: 5px;
+  margin: 1px 12px 0 2px;
+  float: left;
+}
+
+.timestamp_smaller {
+  font-size: 85%;
+  margin: 0;
 }

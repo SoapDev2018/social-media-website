@@ -69,9 +69,9 @@
             <?php
                 if($userLoggedIn != $username) {
                     echo '<div class="profile_info_bottom">';
-                    echo '<button type="button" class="btn btn-info">';
+                    //echo '<button type="button" class="btn btn-info">';
                     echo $logged_in_user_obj->getMutualFriends($username) . " mutual friends";
-                    echo '</button>';
+                    //echo '</button>';
                     echo '</div>';
                 }
             ?>

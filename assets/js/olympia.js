@@ -25,7 +25,8 @@ function getDropdownData(user, type) {
   if($(".dropdown_data_window").css("height") == "0px") {
     var pageName;
     if(type == 'notification') {
-
+      pageName = "ajax_load_notifications.php";
+      $("span").remove("#unread_notification");
     }
     else if(type == 'message') {
       pageName = "ajax_load_messages.php";

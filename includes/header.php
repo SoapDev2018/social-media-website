@@ -3,6 +3,7 @@
   include("includes/classes/User.php");
   include("includes/classes/Post.php");
   include("includes/classes/Message.php");
+  include("includes/classes/Notification.php");
 
   if(isset($_SESSION['username'])) {
     $userLoggedIn = $_SESSION['username'];
@@ -12,7 +13,6 @@
   else
     header("Location: register.php");
 ?>
-<!-- <!DOCTYPE html> -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -45,6 +45,10 @@
         //Unread messages
         $messages = new Message($con, $userLoggedIn);
         $num_messages = $messages->getUnreadNumber();
+
+        //Unread notifications
+        $notifications = new Notification($con, $userLoggedIn);
+        $num_notifications = $notifications->getUnreadNumber();
       ?>
       <a href="<?php echo $userLoggedIn ?>">
         <?php echo $user['first_name']; ?>
@@ -56,7 +60,12 @@
           echo '<span class="notification_badge" id="unread_message">' . $num_messages . '</span>';
         ?>
       </a>
-      <a href="#"><i class="fal fa-bell fa-lg"></i></a>
+      <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>','notification')"><i class="fal fa-bell fa-lg"></i>
+        <?php
+          if($num_notifications > 0)
+          echo '<span class="notification_badge" id="unread_notification">' . $num_notifications . '</span>';
+        ?>
+      </a>
       <a href="requests.php"><i class="fal fa-users fa-lg"></i></a>
       <a href="#"><i class="fal fa-cog fa-lg"></i></a>
       <a href="includes/handlers/logout.php"><i class="fal fa-sign-out-alt fa-lg"></i></a>
