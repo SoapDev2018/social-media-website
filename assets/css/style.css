@@ -471,6 +471,8 @@ textarea:focus {
   width: 100px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 .button_holder {
@@ -514,4 +516,22 @@ textarea:focus {
 #searchMutual {
   color: #8c8c8c;
   margin-top: -10px;
+}
+
+.search_result {
+  padding: 10px;
+  height: 100px;
+}
+
+.searchPageFriendButtons {
+  float: right;
+}
+
+.result_profile_pic {
+  float: left;
+  margin-right: 10px;
+}
+
+hr.searchPage {
+  margin-bottom: 0px;
 }
