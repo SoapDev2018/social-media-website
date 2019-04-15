@@ -68,27 +68,27 @@
       <a href="<?php echo $userLoggedIn ?>">
         <?php echo $user['first_name']; ?>
       </a>
-      <a href="index.php"><i class="fal fa-home fa-lg"></i></a>
-      <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>','message')"><i class="fal fa-envelope fa-lg"></i>
+      <a href="index.php"><i class="fas fa-home fa-lg"></i></a>
+      <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>','message')"><i class="fas fa-envelope fa-lg"></i>
         <?php
           if($num_messages > 0)
           echo '<span class="notification_badge" id="unread_message">' . $num_messages . '</span>';
         ?>
       </a>
-      <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>','notification')"><i class="fal fa-bell fa-lg"></i>
+      <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>','notification')"><i class="fas fa-bell fa-lg"></i>
         <?php
           if($num_notifications > 0)
           echo '<span class="notification_badge" id="unread_notification">' . $num_notifications . '</span>';
         ?>
       </a>
-      <a href="requests.php"><i class="fal fa-users fa-lg"></i>
+      <a href="requests.php"><i class="fas fa-users fa-lg"></i>
         <?php
           if($num_friendRequests > 0)
           echo '<span class="notification_badge" id="unread_requests">' . $num_friendRequests . '</span>';
         ?>
       </a>
-      <a href="#"><i class="fal fa-cog fa-lg"></i></a>
-      <a href="includes/handlers/logout.php"><i class="fal fa-sign-out-alt fa-lg"></i></a>
+      <a href="settings.php"><i class="fas fa-cog fa-lg"></i></a>
+      <a href="includes/handlers/logout.php"><i class="fas fa-sign-out-alt fa-lg"></i></a>
     </nav>
     <div class="dropdown_data_window" style="height: 0px; border: none;"></div>
     <input type="hidden" id="dropdown_data_type" value="">

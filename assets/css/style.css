@@ -84,6 +84,7 @@ nav a:hover {
   border-radius: 7px;
   box-shadow: 2px 2px 1px #d3d3d3;
   z-index: -1;
+  color: #555;
 }
 
 .user_details {
@@ -534,4 +535,21 @@ textarea:focus {
 
 hr.searchPage {
   margin-bottom: 0px;
+}
+
+.small_profile_pic {
+  height: 55px;
+  margin: 1px 12px 0 2px;
+  float: left;
+}
+
+#settings_input {
+  border: 1px solid #ccc;
+  height: 20px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  width: 200px;
 }
