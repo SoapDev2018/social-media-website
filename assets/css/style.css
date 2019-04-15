@@ -22,8 +22,8 @@ a {
   width: 100%;
   min-width: 1050px;
   height: 40px;
-  background-color: #7d5fff;
-  border-bottom: 0.25em solid #7158e2;
+  background-color: #20aae5;
+  border-bottom: 0.25em solid #1894ca;
   margin: 0 0 10px;
   display: inline-flex;
   position: fixed;
@@ -36,8 +36,8 @@ a {
   font-size: 200%;
   position: relative;
   top: 9px;
-  color: #2d45b7;
-  text-shadow: #030b30 0.5px 0.5px 0px;
+  color: #1894ca;
+  text-shadow: #1086BA 0.5px 0.5px 0px;
 }
 
 .logo a:hover {
@@ -59,8 +59,7 @@ nav a{
 
 nav a:hover {
   text-decoration: none;
-  border-bottom: 7px solid #3867d6;
-  color: #fff;
+  color: #000;
 }
 
 .wrapper {
@@ -552,4 +551,8 @@ hr.searchPage {
   font-size: 14px;
   line-height: 20px;
   width: 200px;
+}
+
+nav i:hover {
+  color: #000;
 }
