@@ -14,6 +14,19 @@
       $check_empty = preg_replace('/\s+/','',$body);
       $date_object = new DateTime();
       if($check_empty != "") {
+
+        //Splitting a string to get YouTube URL from a post
+        $body_array = preg_split("/\s+/", $body);
+        foreach($body_array as $key => $value) {
+          if(strpos($value, "www.youtube.com/watch?v=") !== false) {
+            $link = preg_split("!&!", $value);
+            $value = preg_replace("!watch\?v=!", "embed/", $link[0]);
+            $value = "<br><iframe width=\'420\' height=\'350\' src=\'" . $value . "\'></iframe><br>";
+            $body_array[$key] = $value;
+          }
+        }
+        $body = implode(" ", $body_array);
+
         $date_added = $date_object->format('Y-m-d H:i:s'); //Current date and time
         $added_by = $this->user_obj->getUsername(); //Get username
         
