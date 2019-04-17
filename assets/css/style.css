@@ -556,3 +556,10 @@ hr.searchPage {
 nav i:hover {
   color: #000;
 }
+
+.postedImage img {
+  max-height: 300px;
+  max-width: 100%;
+  display: block;
+  margin: 5px auto;
+}
