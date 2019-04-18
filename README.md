@@ -45,6 +45,8 @@ Complete notification system where users are notified if anyone likes their post
 
 A basic minimal settings page which currently supports changing first name, last name, email and password
 
+Email verification system with sending of unique hash
+
 ***
 
 **Security Measures:**
@@ -58,8 +60,6 @@ Email validation is performed
 ***
 
 **Expected features to come soon:**
-
-> Adding email verification
 
 > Fixing of messaging system
 
