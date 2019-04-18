@@ -150,9 +150,30 @@
           $profile_pic="./assets/images/profile_pics/defaults/1.png";  
       }
 
-      $query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',')");
+      $date = date("Y-m-d H:i:s");
+      $date = md5($date);
+      $code = md5(rand(0, 1000));
+      $code = $code . $date;
+      $hash = md5($code);
 
-      array_push($error_array, "<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>");
+      $query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',', '$code', 'no')");
+
+      array_push($error_array, "<span style='color: #14C800;'>You're all set! Go ahead and verify your email with the link sent to your profile!</span><br>");
+
+      //Sending email to registered email of user
+      $to = $em;
+      $subject = 'Signup | Verification | Project Olympia | Social Media Website'; // Give the email a subject 
+      $message = '
+      
+      Thanks for signing up!
+      Your account has been created, you can login with the credentials you have provided after you have activated your account by pressing the url below.
+
+      Please click this link to activate your account:
+      http://example.com/verify.php?email='.$em.'&hash='.$hash.'
+      
+      ';
+      $headers = 'From:noreply@example.com' . "\r\n"; // Set from headers
+      mail($to, $subject, $message, $headers); // Send our email
 
       //Clear session variables
       $_SESSION['reg_fname']="";

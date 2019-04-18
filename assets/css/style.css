@@ -563,3 +563,13 @@ nav i:hover {
   display: block;
   margin: 5px auto;
 }
+
+.statusmsg {
+  font-family: 'Bellota-LightItalic', sans-serif;
+  font-size: 22px;
+  text-align: center;
+  padding: 3px;
+  background: #EDEDED;
+  border: 1px solid #DFDFDF;
+  text-decoration: none;
+}

@@ -45,6 +45,8 @@
             <br>
             <?php if(in_array("Email or password was incorrect<br>", $error_array))
                 echo "Email or password was incorrect<br>"; ?>
+            <?php if(in_array("Your account was not activated! A new activation email has been sent to your email<br>", $error_array))
+                echo "Your account was not activated! A new activation email has been sent to your email<br>"; ?>
             <input type="submit" name="login_btn" value="Login!">
             <br>
             <a href="#" id="signup" class="signup">Need an account? Register Here</a>
@@ -94,8 +96,8 @@
                     echo "Your password must be between 8 and 64 characters<br>"; ?>
             <input type="submit" name="register_btn" value="Register">
             <br>
-            <?php if(in_array("<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>",$error_array))
-                    echo "<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>"; ?>
+            <?php if(in_array("<span style='color: #14C800;'>You're all set! Go ahead and verify your email with the link sent to your profile!</span><br>",$error_array))
+                    echo "<span style='color: #14C800;'>You're all set! Go ahead and verify your email with the link sent to your profile!</span><br>"; ?>
             <a href="#" id="login" class="login">Already have an account? Signin here</a>
           </form>
         </div>
