@@ -1,15 +1,15 @@
 <?php
   include("config/config.php");
-  $error_array = array();
   if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])) {
-    $email = mysql_escape_string($_GET['email']);
-    $hash = mysql_escape_string($_GET['hash']);
+    $email = mysqli_escape_string($con, $_GET['email']);
+    $hash = mysqli_escape_string($con, $_GET['hash']);
     $query = mysqli_query($con, "SELECT email, code, verified FROM users WHERE email='$email' AND code='$hash' AND verified='no'");
-    $row = mysqli_fetch_rows($query);
+    $verified_query = mysqli_query($con, "SELECT email, code, verified FROM users WHERE email='$email'");
+    $row = mysqli_fetch_array($verified_query);
     $count = mysqli_num_rows($query);
     if($count > 0) {
       $message = "Congratulations! Your account has been activated and you can login!";
-      $update_act = mysqli_query($con, "UPDATE users SET code='0' AND verified='yes' WHERE email='$email'");
+      $update_act = mysqli_query($con, "UPDATE users SET code='0', verified='yes' WHERE email='$email'");
     }
     else {
       if($row['verified'] == "yes")
@@ -24,7 +24,7 @@
 
         $to = $email;
         $subject = 'Signup | Verification | Project Olympia | Social Media Website'; // Give the email a subject 
-        $message = '
+        $message_body = '
         
         Thanks for signing up!
         Your account has been created, you can login with the credentials you have provided after you have activated your account by pressing the url below.
@@ -34,7 +34,7 @@
         
         ';
         $headers = 'From:noreply@example.com' . "\r\n"; // Set from headers
-        mail($to, $subject, $message, $headers); // Send our email
+        mail($to, $subject, $message_body, $headers); // Send our email
         $hash_update_query = mysqli_query($con, "UPDATE users SET code='$hash' WHERE email='$email'");
       }
     }

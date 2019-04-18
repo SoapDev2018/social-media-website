@@ -7,7 +7,7 @@
     $check_verified_query = mysqli_query($con, "SELECT verified FROM users WHERE email='$email'");
     $check_verified_query_row = mysqli_fetch_array($check_verified_query);
     $check_db_query = mysqli_query($con, "SELECT * FROM users WHERE email='$email' AND password='$password'");
-    if($row['verified'] == "yes") {
+    if($check_verified_query_row['verified'] == "yes") {
       if(mysqli_num_rows($check_db_query) == 1) {
         $row = mysqli_fetch_array($check_db_query);
         $username = $row['username'];
