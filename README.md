@@ -23,39 +23,39 @@ JQuery JCrop
 
 **Features included:**
 
-Automatic username generation based on first name and last name
+> Automatic username generation based on first name and last name
 
-Newsfeed where posts from yourself and friends show up
+> Newsfeed where posts from yourself and friends show up
 
-Profile Page which contains newsfeed and information about that person
+> Profile Page which contains newsfeed and information about that person
 
-Live search function to search for any user using first name, first name+last name or username
+> Live search function to search for any user using first name, first name+last name or username
 
-Option to add status updates from the newsfeed page, from profile page or even upload an image as status
+> Option to add status updates from the newsfeed page, from profile page or even upload an image as status
 
-Option to add YouTube URLs as embeds
+> Option to add YouTube URLs as embeds
 
-Complete likes and comments system
+> Complete likes and comments system
 
-Complete friend request system
+> Complete friend request system
 
-Complete messaging system (Currently is buggy)
+> Complete messaging system (Currently is buggy)
 
-Complete notification system where users are notified if anyone likes their post, comments on their post and so on
+> Complete notification system where users are notified if anyone likes their post, comments on their post and so on
 
-A basic minimal settings page which currently supports changing first name, last name, email and password
+> A basic minimal settings page which currently supports changing first name, last name, email and password
 
-Email verification system with sending of unique hash
+> Email verification system with sending of unique hash
 
 ***
 
 **Security Measures:**
 
-Passwords are md5-ed. I know that is not secure and that shall be changed in the near future
+> Passwords are md5-ed. I know that is not secure and that shall be changed in the near future
 
-Emails, first name and last names are stripped of tags to prevent attacks
+> Emails, first name and last names are stripped of tags to prevent attacks
 
-Email validation is performed
+> Email validation is performed
 
 ***
 
