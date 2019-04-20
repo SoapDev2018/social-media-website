@@ -77,4 +77,8 @@ JQuery JCrop
 
 > Adding of more settings to the settings page
 
+> Groups
+
+> Pages
+
 ```This list is non-exhaustive and upcoming features shall be completed, feature roadmap frequently updated and more features addded to this list```
