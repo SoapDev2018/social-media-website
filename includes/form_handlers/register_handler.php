@@ -150,10 +150,10 @@
           $profile_pic="./assets/images/profile_pics/defaults/1.png";  
       }
 
-      $date = date("Y-m-d H:i:s");
-      $date = md5($date);
+      $date_code = date("Y-m-d H:i:s");
+      $date_code = md5($date_code);
       $code = md5(rand(0, 1000));
-      $code = $code . $date;
+      $code = $code . $date_code;
       $hash = md5($code);
 
       $query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',', '$hash', 'no')");
